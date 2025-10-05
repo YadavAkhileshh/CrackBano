@@ -1,5 +1,5 @@
 // Base URL for all API requests
-export const Base_url = "http://localhost:8000";
+export const Base_url = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 // API endpoint paths
 export const API_PATHS = {
