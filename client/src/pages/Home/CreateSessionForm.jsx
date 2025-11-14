@@ -193,9 +193,18 @@ const CreateSessionForm = () => {
     return (
         <DashboardLayout>
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <button
+                    onClick={() => navigate('/dashboard')}
+                    className="mb-6 inline-flex items-center gap-2 text-slate-600 hover:text-teal-600 transition-colors duration-200"
+                >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back to Dashboard
+                </button>
                 <div className="text-center mb-10">
-                    <h1 className="text-4xl font-bold text-white mb-4">Create Interview Session</h1>
-                    <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+                    <h1 className="text-4xl font-bold text-slate-900 mb-4">Create Interview Session</h1>
+                    <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                         Set up your personalized interview preparation session with AI-generated questions
                     </p>
                 </div>
@@ -206,7 +215,7 @@ const CreateSessionForm = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {/* Role Input */}
                             <div>
-                                <label htmlFor="role" className="block text-sm font-semibold text-slate-200 mb-2">
+                                <label htmlFor="role" className="block text-sm font-semibold text-slate-700 mb-2">
                                     Target Role <span className="text-red-400">*</span>
                                 </label>
                                 <input
@@ -229,7 +238,7 @@ const CreateSessionForm = () => {
 
                             {/* Experience Input */}
                             <div>
-                                <label htmlFor="experience" className="block text-sm font-semibold text-slate-200 mb-2">
+                                <label htmlFor="experience" className="block text-sm font-semibold text-slate-700 mb-2">
                                     Experience Level <span className="text-red-400">*</span>
                                 </label>
                                 <input
@@ -255,7 +264,7 @@ const CreateSessionForm = () => {
 
                         {/* Topics Input */}
                         <div>
-                            <label htmlFor="topics" className="block text-sm font-semibold text-slate-200 mb-2">
+                            <label htmlFor="topics" className="block text-sm font-semibold text-slate-700 mb-2">
                                 Key Topics & Skills <span className="text-red-400">*</span>
                             </label>
                             <div className="flex gap-3 mb-4">
@@ -286,18 +295,18 @@ const CreateSessionForm = () => {
                             </div>
                             
                             {/* Selected Topics */}
-                            <div className="flex flex-wrap gap-3 min-h-[3rem] p-4 bg-slate-700/30 rounded-lg border border-slate-600/50">
+                            <div className="flex flex-wrap gap-3 min-h-[3rem] p-4 bg-slate-50 rounded-lg border border-slate-200">
                                 {formData.topicsToFocus.length > 0 ? (
                                     formData.topicsToFocus.map((topic, index) => (
                                         <span
                                             key={index}
-                                            className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-indigo-900/50 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-800/50 transition-colors duration-200"
+                                            className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-100 transition-colors duration-200"
                                         >
                                             {topic}
                                             <button
                                                 type="button"
                                                 onClick={() => removeTopic(topic)}
-                                                className="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-indigo-700/50 hover:bg-red-600 focus:outline-none transition-colors duration-200"
+                                                className="ml-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-teal-200 hover:bg-red-500 hover:text-white focus:outline-none transition-colors duration-200"
                                                 disabled={loading}
                                             >
                                                 <FiX className="w-3 h-3" />
@@ -319,14 +328,14 @@ const CreateSessionForm = () => {
 
                         {/* Description Input */}
                         <div>
-                            <label htmlFor="description" className="block text-sm font-semibold text-slate-200 mb-2">
+                            <label htmlFor="description" className="block text-sm font-semibold text-slate-700 mb-2">
                                 Additional Notes <span className="text-slate-400 font-normal">(Optional)</span>
                             </label>
                             <textarea
                                 id="description"
                                 name="description"
                                 rows="4"
-                                className="w-full px-4 py-3 border border-slate-600/50 bg-slate-700/50 text-white placeholder-slate-400 rounded-xl shadow-sm focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400 backdrop-blur-sm transition-all duration-200"
+                                className="w-full px-4 py-3 border border-slate-300 bg-white text-slate-800 placeholder-slate-400 rounded-xl shadow-sm focus:ring-2 focus:ring-teal-100 focus:border-teal-500 transition-all duration-200"
                                 placeholder="Any specific areas, company details, or interview format you'd like to focus on..."
                                 value={formData.description}
                                 onChange={handleChange}

@@ -4,12 +4,12 @@ function Modal({ children, isOpen, onClose, title, hideHeader }) {
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-50 flex justify-center items-center w-full h-full bg-black/60 backdrop-blur-sm animate-fade-in-up">
-      <div className="relative flex flex-col bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl overflow-hidden rounded-2xl border border-slate-700/50 max-w-md w-full mx-4 animate-slide-in-right">
+      <div className="relative flex flex-col bg-white shadow-2xl overflow-hidden rounded-2xl border border-slate-200 max-w-md w-full mx-4 animate-slide-in-right">
         {!hideHeader && (
-          <div className="flex items-center justify-between p-6 border-b border-slate-700/50">
-            <h3 className="text-xl font-semibold text-white">{title}</h3>
+          <div className="flex items-center justify-between p-6 border-b border-slate-200">
+            <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
           </div>)}
-        <button type="button" className="text-slate-400 bg-slate-800/50 hover:bg-slate-700/50 hover:text-white rounded-full text-sm w-10 h-10 flex justify-center items-center absolute top-4 right-4 cursor-pointer transition-all duration-200 hover:scale-110 border border-slate-600/50" onClick={onClose}>
+        <button type="button" className="text-slate-600 bg-slate-100 hover:bg-slate-200 hover:text-slate-900 rounded-full text-sm w-10 h-10 flex justify-center items-center absolute top-4 right-4 cursor-pointer transition-all duration-200 hover:scale-110 border border-slate-300" onClick={onClose}>
           <svg
             className="w-4 h-4"
             aria-hidden="true"

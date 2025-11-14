@@ -14,6 +14,7 @@ import InterviewPrep from './pages/Ip/InterviewPrep';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import TermsOfService from './pages/legal/TermOfServie';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import Profile from './pages/profile/Profile';
 import EditProfile from './pages/profile/EditProfile';
 import NotFound from './pages/NotFound';
@@ -25,8 +26,8 @@ function AppContent() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
       </div>
     );
   }
@@ -37,10 +38,13 @@ function AppContent() {
       {/* Public routes */}
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<GuestRoute><Login /></GuestRoute>} />
-      <Route path="/register" element={<GuestRoute><Signup /></GuestRoute>} />
+      <Route path="/signin" element={<Navigate to="/login" replace />} />
+      <Route path="/signup" element={<GuestRoute><Signup /></GuestRoute>} />
+      <Route path="/register" element={<Navigate to="/signup" replace />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
 
       {/* Protected routes */}
       <Route path="/dashboard" element={
@@ -84,17 +88,17 @@ function GuestRoute({ children }) {
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
+    <div className="min-h-screen">
       <AppContent />
       <Toaster
         position="top-center"
         toastOptions={{
           duration: 3000,
           style: {
-            background: 'linear-gradient(135deg, #059669, #10B981)',
+            background: 'linear-gradient(135deg, #14B8A6, #06B6D4)',
             color: '#fff',
             borderRadius: '12px',
-            border: '1px solid rgba(16, 185, 129, 0.3)',
+            border: '1px solid rgba(20, 184, 166, 0.3)',
             fontFamily: 'Outfit, sans-serif',
           },
         }}

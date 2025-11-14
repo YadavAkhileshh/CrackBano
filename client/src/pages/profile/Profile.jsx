@@ -17,7 +17,7 @@ export default function Profile() {
     return (
       <DashboardLayout>
         <div className="flex items-center justify-center min-h-[60vh]">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
         </div>
       </DashboardLayout>
     );
@@ -27,7 +27,7 @@ export default function Profile() {
     <DashboardLayout>
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="card-professional overflow-hidden">
-          <div className="bg-gradient-to-r from-indigo-600 to-blue-600 px-8 py-6">
+          <div className="bg-gradient-to-r from-teal-600 to-cyan-600 px-8 py-6">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -45,7 +45,7 @@ export default function Profile() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold text-white">{user.name || 'User Profile'}</h1>
-                  <p className="text-indigo-100">{user.email}</p>
+                  <p className="text-teal-100">{user.email}</p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -69,34 +69,34 @@ export default function Profile() {
           <div className="p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-6">
-                <div className="p-6 bg-slate-700/30 rounded-xl border border-slate-600/50">
+                <div className="p-6 bg-slate-50 rounded-xl border border-slate-200">
                   <div className="flex items-center gap-3 mb-4">
-                    <FiUser className="w-5 h-5 text-indigo-400" />
-                    <h3 className="text-lg font-semibold text-white">Personal Information</h3>
+                    <FiUser className="w-5 h-5 text-teal-600" />
+                    <h3 className="text-lg font-semibold text-slate-900">Personal Information</h3>
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <label className="text-sm font-medium text-slate-300">Full Name</label>
-                      <p className="text-white font-medium">{user.name || 'Not set'}</p>
+                      <label className="text-sm font-medium text-slate-600">Full Name</label>
+                      <p className="text-slate-900 font-medium">{user.name || 'Not set'}</p>
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-slate-300">Email Address</label>
-                      <p className="text-white font-medium">{user.email}</p>
+                      <label className="text-sm font-medium text-slate-600">Email Address</label>
+                      <p className="text-slate-900 font-medium">{user.email}</p>
                     </div>
                   </div>
                 </div>
               </div>
               
               <div className="space-y-6">
-                <div className="p-6 bg-slate-700/30 rounded-xl border border-slate-600/50">
+                <div className="p-6 bg-slate-50 rounded-xl border border-slate-200">
                   <div className="flex items-center gap-3 mb-4">
-                    <FiCalendar className="w-5 h-5 text-indigo-400" />
-                    <h3 className="text-lg font-semibold text-white">Account Details</h3>
+                    <FiCalendar className="w-5 h-5 text-teal-600" />
+                    <h3 className="text-lg font-semibold text-slate-900">Account Details</h3>
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <label className="text-sm font-medium text-slate-300">Member Since</label>
-                      <p className="text-white font-medium">
+                      <label className="text-sm font-medium text-slate-600">Member Since</label>
+                      <p className="text-slate-900 font-medium">
                         {user.createdAt ? new Date(user.createdAt).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
@@ -105,8 +105,8 @@ export default function Profile() {
                       </p>
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-slate-300">Account Status</label>
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-900/50 text-green-300 border border-green-500/30">
+                      <label className="text-sm font-medium text-slate-600">Account Status</label>
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700 border border-green-200">
                         Active
                       </span>
                     </div>

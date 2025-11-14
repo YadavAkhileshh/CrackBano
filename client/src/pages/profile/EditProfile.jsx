@@ -52,20 +52,20 @@ function EditProfile() {
     <DashboardLayout>
       <div className="container mx-auto px-4 py-8 max-w-2xl">
         <div className="card-professional">
-          <div className="flex items-center gap-4 mb-8 p-6 border-b border-slate-700">
+          <div className="flex items-center gap-4 mb-8 p-6 border-b border-slate-200">
             <button
               onClick={() => navigate(-1)}
-              className="p-2 rounded-lg hover:bg-slate-700 transition-colors duration-200"
+              className="p-2 rounded-lg hover:bg-slate-100 transition-colors duration-200"
             >
-              <FiArrowLeft className="w-5 h-5 text-slate-300" />
+              <FiArrowLeft className="w-5 h-5 text-slate-600" />
             </button>
-            <h1 className="text-2xl font-bold text-white">Edit Profile</h1>
+            <h1 className="text-2xl font-bold text-slate-900">Edit Profile</h1>
           </div>
 
           <form onSubmit={handleSubmit} className="p-6 space-y-8">
             <div className="flex flex-col items-center">
               <div className="relative mb-6">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 border-4 border-slate-600 flex items-center justify-center overflow-hidden">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 border-4 border-teal-200 flex items-center justify-center overflow-hidden">
                   {preview ? (
                     <img
                       src={preview}
@@ -78,7 +78,7 @@ function EditProfile() {
                     </span>
                   )}
                 </div>
-                <label className="absolute bottom-0 right-0 bg-indigo-600 text-white rounded-full p-3 cursor-pointer hover:bg-indigo-700 transition-colors duration-200 shadow-lg">
+                <label className="absolute bottom-0 right-0 bg-teal-600 text-white rounded-full p-3 cursor-pointer hover:bg-teal-700 transition-colors duration-200 shadow-lg">
                   <FiUpload className="w-4 h-4" />
                   <input
                     type="file"
@@ -88,7 +88,7 @@ function EditProfile() {
                   />
                 </label>
               </div>
-              <p className="text-slate-400 text-sm">Click the upload button to change your profile picture</p>
+              <p className="text-slate-600 text-sm">Click the upload button to change your profile picture</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -132,11 +132,11 @@ function EditProfile() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-end gap-3 pt-6 border-t border-slate-700">
+            <div className="flex flex-col sm:flex-row justify-end gap-3 pt-6 border-t border-slate-200">
               <button
                 type="button"
                 onClick={() => navigate(-1)}
-                className="btn-small bg-slate-700 text-slate-300 border-slate-600 hover:bg-slate-600"
+                className="btn-secondary"
               >
                 Cancel
               </button>

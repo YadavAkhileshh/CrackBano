@@ -132,20 +132,22 @@ function Dashboard() {
     <DashboardLayout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
-          <div className="space-y-1">
-            <h1 className="text-4xl font-bold text-white tracking-tight">Dashboard</h1>
-            <p className="text-lg text-slate-300">
-              Master your interview skills with AI-powered preparation
-            </p>
+        <div className="mb-10">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div className="space-y-2">
+              <h1 className="text-4xl font-bold text-slate-900 tracking-tight">Dashboard</h1>
+              <p className="text-base text-slate-600 max-w-2xl">
+                Master your interview skills with AI-powered preparation
+              </p>
+            </div>
+            <Link
+              to="/create-session"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-semibold rounded-xl shadow-md text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 active:scale-[0.98] hover:scale-105"
+            >
+              <FiPlus className="mr-2 w-4 h-4" />
+              New Session
+            </Link>
           </div>
-          <Link
-            to="/create-session"
-            className="mt-6 md:mt-0 inline-flex items-center px-8 py-4 border border-transparent text-base font-semibold rounded-xl shadow-lg text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 hover:shadow-xl hover:shadow-emerald-500/50 transition-all duration-300 active:scale-[0.98] hover:scale-105 hover:-translate-y-1"
-          >
-            <FiPlus className="mr-2 w-5 h-5" />
-            Start New Session
-          </Link>
         </div>
 
 
@@ -156,16 +158,16 @@ function Dashboard() {
           <div className="card-professional overflow-hidden hover:scale-[1.05] transition-all duration-300 group">
             <div className="px-6 py-6">
               <div className="flex items-center">
-                <div className="flex-shrink-0 bg-gradient-to-r from-emerald-600 to-green-600 rounded-xl p-3 shadow-lg group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-300">
+                <div className="flex-shrink-0 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl p-3 shadow-lg group-hover:shadow-teal-500/50 group-hover:scale-110 transition-all duration-300">
                   <FiClock className="h-6 w-6 text-white" />
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className="text-sm font-medium text-slate-400 truncate">
+                    <dt className="text-sm font-medium text-slate-600 truncate">
                       Total Sessions
                     </dt>
                     <dd className="flex items-baseline">
-                      <div className="text-3xl font-bold text-white">
+                      <div className="text-3xl font-bold text-slate-900">
                         {stats.totalSessions}
                       </div>
                     </dd>
@@ -179,16 +181,16 @@ function Dashboard() {
           <div className="card-professional overflow-hidden hover:scale-[1.05] transition-all duration-300 group">
             <div className="px-6 py-6">
               <div className="flex items-center">
-                <div className="flex-shrink-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl p-3 shadow-lg group-hover:shadow-blue-500/50 group-hover:scale-110 transition-all duration-300">
+                <div className="flex-shrink-0 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl p-3 shadow-lg group-hover:shadow-blue-500/50 group-hover:scale-110 transition-all duration-300">
                   <FiAlertCircle className="h-6 w-6 text-white" />
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className="text-sm font-medium text-slate-400 truncate">
+                    <dt className="text-sm font-medium text-slate-600 truncate">
                       Total Questions
                     </dt>
                     <dd className="flex items-baseline">
-                      <div className="text-3xl font-bold text-white">
+                      <div className="text-3xl font-bold text-slate-900">
                         {stats.totalQuestions}
                       </div>
                     </dd>
@@ -202,16 +204,16 @@ function Dashboard() {
           <div className="card-professional overflow-hidden hover:scale-[1.05] transition-all duration-300 group">
             <div className="px-6 py-6">
               <div className="flex items-center">
-                <div className="flex-shrink-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-3 shadow-lg group-hover:shadow-purple-500/50 group-hover:scale-110 transition-all duration-300">
+                <div className="flex-shrink-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-3 shadow-lg group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-300">
                   <FiCheckCircle className="h-6 w-6 text-white" />
                 </div>
                 <div className="ml-5 w-0 flex-1">
                   <dl>
-                    <dt className="text-sm font-medium text-slate-400 truncate">
+                    <dt className="text-sm font-medium text-slate-600 truncate">
                       Pinned Questions
                     </dt>
                     <dd className="flex items-baseline">
-                      <div className="text-3xl font-bold text-white">
+                      <div className="text-3xl font-bold text-slate-900">
                         {stats.pinnedQuestions}
                       </div>
                     </dd>
@@ -222,7 +224,7 @@ function Dashboard() {
           </div>
 
           {/* Quick Actions Card */}
-          <div className="bg-gradient-to-br from-emerald-600 via-green-600 to-teal-600 overflow-hidden shadow-xl rounded-xl border border-emerald-500/30 hover:scale-[1.05] transition-all duration-300 animate-gradient group">
+          <div className="bg-gradient-to-br from-teal-600 to-cyan-600 overflow-hidden shadow-xl rounded-xl border border-teal-500/30 hover:scale-[1.05] transition-all duration-300 group">
             <div className="px-6 py-6 h-full flex items-center">
               <div className="w-full text-center">
                 <h3 className="text-lg font-semibold text-white mb-3 group-hover:scale-105 transition-transform duration-300">
@@ -230,7 +232,7 @@ function Dashboard() {
                 </h3>
                 <Link
                   to="/create-session"
-                  className="inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-semibold rounded-lg text-emerald-700 bg-white hover:bg-slate-100 transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105"
+                  className="inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-semibold rounded-lg text-teal-700 bg-white hover:bg-slate-100 transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105"
                 >
                   <FiPlus className="mr-2 w-4 h-4" />
                   New Session
@@ -242,30 +244,19 @@ function Dashboard() {
 
 
         <div className="card-professional shadow-xl overflow-hidden">
-          <div className="px-6 py-6 border-b border-slate-700/50">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-xl font-semibold text-white">
-                  Recent Sessions
-                </h3>
-                <p className="mt-1 text-slate-300">
-                  Your latest interview preparation sessions
-                </p>
-              </div>
-              <div className="hidden sm:block">
-                <Link
-                  to="/create-session"
-                  className="btn-small"
-                >
-                  <FiPlus className="w-4 h-4" />
-                  New Session
-                </Link>
-              </div>
+          <div className="px-6 py-6 border-b border-slate-200">
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900">
+                Recent Sessions
+              </h3>
+              <p className="mt-1 text-slate-600">
+                Your latest interview preparation sessions
+              </p>
             </div>
           </div>
 
           {sessions.length > 0 ? (
-            <ul className="divide-y divide-slate-700">
+            <ul className="divide-y divide-slate-200">
               {sessions.map((session, index) => (
                 <motion.li
                   key={session._id}
@@ -275,19 +266,19 @@ function Dashboard() {
                 >
                   <Link
                     to={`/interview-prep/${session._id}`}
-                    className="block hover:bg-slate-700/30 transition-all duration-200 rounded-lg mx-2 my-1"
+                    className="block hover:bg-slate-50 transition-all duration-200 rounded-lg mx-2 my-1"
                   >
                     <div className="px-6 py-5">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                          <div className={`h-3 w-3 rounded-full shadow-sm ${session.questions?.length > 0 ? 'bg-emerald-400' : 'bg-slate-400'
+                          <div className={`h-3 w-3 rounded-full shadow-sm ${session.questions?.length > 0 ? 'bg-green-500' : 'bg-slate-400'
                             }`}></div>
-                          <p className="ml-4 text-base font-semibold text-indigo-400 truncate">
+                          <p className="ml-4 text-base font-semibold text-teal-600 truncate">
                             {session.role} Interview
                           </p>
                         </div>
                         <div className="ml-2 flex-shrink-0 flex">
-                          <span className="px-3 py-1 inline-flex text-xs font-semibold rounded-full bg-indigo-900/50 text-indigo-300 border border-indigo-700/50">
+                          <span className="px-3 py-1 inline-flex text-xs font-semibold rounded-full bg-teal-50 text-teal-700 border border-teal-200">
                             {session.questions?.length || 0} questions
                           </span>
                         </div>
@@ -301,21 +292,21 @@ function Dashboard() {
                                 .map((topic, idx) => {
                                   const topicName = typeof topic === 'string' ? topic : (topic?.question || 'Untitled');
                                   return (
-                                    <span key={idx} className="px-2 py-1 text-xs font-medium bg-slate-700/50 text-slate-300 rounded-md border border-slate-600/50">
+                                    <span key={idx} className="px-2 py-1 text-xs font-medium bg-slate-100 text-slate-700 rounded-md border border-slate-200">
                                       {topicName}
                                     </span>
                                   );
                                 })
-                              : <span className="text-sm text-slate-400">No topics specified</span>
+                              : <span className="text-sm text-slate-500">No topics specified</span>
                             }
                             {session.topicsToFocus?.length > 3 && (
-                              <span className="px-2 py-1 text-xs font-medium bg-slate-700/50 text-slate-300 rounded-md border border-slate-600/50">
+                              <span className="px-2 py-1 text-xs font-medium bg-slate-100 text-slate-700 rounded-md border border-slate-200">
                                 +{session.topicsToFocus.length - 3} more
                               </span>
                             )}
                           </div>
                         </div>
-                        <div className="mt-3 flex items-center text-sm text-slate-400 sm:mt-0">
+                        <div className="mt-3 flex items-center text-sm text-slate-600 sm:mt-0">
                           <FiClock className="flex-shrink-0 mr-2 h-4 w-4 text-slate-500" />
                           <time dateTime={session.updatedAt} className="font-medium">
                             {formatDate(session.updatedAt)}
@@ -344,17 +335,17 @@ function Dashboard() {
                   d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"
                 />
               </svg>
-              <h3 className="mt-2 text-sm font-medium text-white">No sessions</h3>
-              <p className="mt-1 text-sm text-slate-300">
-                Get started by creating a new interview session.
+              <h3 className="mt-2 text-sm font-medium text-slate-900">No sessions yet</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Get started by creating your first interview session.
               </p>
-              <div className="mt-8">
+              <div className="mt-6">
                 <Link
                   to="/create-session"
-                  className="btn-primary max-w-xs mx-auto"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl font-semibold hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 hover:scale-105 shadow-md"
                 >
-                  <FiPlus className="w-5 h-5" />
-                  Create Your First Session
+                  <FiPlus className="w-4 h-4" />
+                  Create Session
                 </Link>
               </div>
             </div>

@@ -45,7 +45,7 @@ function ProfileInfoCard() {
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
-        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-emerald-500 to-green-500 border-2 border-emerald-500 shadow-lg flex items-center justify-center group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-300">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 border-2 border-teal-500 shadow-lg flex items-center justify-center group-hover:shadow-teal-500/50 group-hover:scale-110 transition-all duration-300">
           {user?.profilePicture ? (
             <img
               src={user.profilePicture}
@@ -58,23 +58,23 @@ function ProfileInfoCard() {
             </span>
           )}
         </div>
-        <span className="hidden md:inline-block font-medium text-white group-hover:text-emerald-300 transition-colors duration-200">
+        <span className="hidden md:inline-block font-medium text-slate-700 group-hover:text-teal-600 transition-colors duration-200">
           {user.name || "User"}
         </span>
-        <FiChevronDown className={`text-slate-300 transition-all duration-300 group-hover:text-emerald-300 ${isOpen ? 'transform rotate-180' : ''}`} />
+        <FiChevronDown className={`text-slate-600 transition-all duration-300 group-hover:text-teal-600 ${isOpen ? 'transform rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-52 card-professional py-2 z-50 shadow-xl animate-fade-in-up">
-          <div className="px-4 py-3 border-b border-slate-700/50">
-            <p className="text-sm font-semibold text-white">{user.name}</p>
-            <p className="text-xs text-slate-400 truncate">{user.email}</p>
+          <div className="px-4 py-3 border-b border-slate-200">
+            <p className="text-sm font-semibold text-slate-800">{user.name}</p>
+            <p className="text-xs text-slate-600 truncate">{user.email}</p>
           </div>
           
           <div className="py-1">
             <Link
               to="/profile"
-              className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:bg-emerald-900/20 hover:text-emerald-300 transition-all duration-200 rounded-lg mx-2 group"
+              className="flex items-center px-4 py-2.5 text-sm text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition-all duration-200 rounded-lg mx-2 group"
               onClick={() => setIsOpen(false)}
             >
               <FiUser className="mr-3 w-4 h-4 group-hover:scale-110 transition-transform duration-200" /> My Profile
@@ -82,18 +82,18 @@ function ProfileInfoCard() {
             
             <Link
               to="/profile/edit"
-              className="flex items-center px-4 py-2.5 text-sm text-slate-300 hover:bg-blue-900/20 hover:text-blue-300 transition-all duration-200 rounded-lg mx-2 group"
+              className="flex items-center px-4 py-2.5 text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200 rounded-lg mx-2 group"
               onClick={() => setIsOpen(false)}
             >
               <FiEdit className="mr-3 w-4 h-4 group-hover:scale-110 transition-transform duration-200" /> Edit Profile
             </Link>
           </div>
           
-          <div className="border-t border-slate-700/50 mt-1 pt-1">
+          <div className="border-t border-slate-200 mt-1 pt-1">
             <div className="px-2">
               <button
                 onClick={handleLogout}
-                className="w-full text-left flex items-center px-4 py-2.5 text-sm text-red-400 hover:bg-red-900/30 hover:text-red-300 transition-all duration-200 rounded-lg border border-transparent hover:border-red-500/30 group"
+                className="w-full text-left flex items-center px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 hover:text-red-700 transition-all duration-200 rounded-lg border border-transparent hover:border-red-200 group"
               >
                 <FiLogOut className="mr-3 w-4 h-4 group-hover:scale-110 transition-transform duration-200" /> Logout
               </button>
