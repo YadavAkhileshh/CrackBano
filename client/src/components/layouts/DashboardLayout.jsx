@@ -4,12 +4,10 @@ import Navbar from './Navbar';
 import { useContext } from 'react';
 
 function DashboardLayout({ children }) {
-  const { user } = useContext(UserContext);
-  
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100">
       <Navbar />
-      {user && <div>{children}</div>}
+      <div>{children}</div>
     </div>
   )
 }
