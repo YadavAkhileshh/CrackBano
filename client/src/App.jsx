@@ -14,7 +14,7 @@ import InterviewPrep from './pages/Ip/InterviewPrep';
 import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import TermsOfService from './pages/legal/TermOfServie';
-import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import PrivacyPage from './pages/legal/PrivacyPage';
 import Profile from './pages/profile/Profile';
 import EditProfile from './pages/profile/EditProfile';
 import NotFound from './pages/NotFound';
@@ -44,7 +44,7 @@ function AppContent() {
       <Route path="/about" element={<AboutUs />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/terms-of-service" element={<TermsOfService />} />
-      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
 
       {/* Protected routes */}
       <Route path="/dashboard" element={
