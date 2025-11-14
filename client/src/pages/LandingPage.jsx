@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { LuSparkles, LuArrowRight, LuCheck } from 'react-icons/lu';
 import { FaRegLightbulb, FaChartLine, FaUserTie, FaRobot } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { UserContext } from '../context/userContext';
 import { useContext } from 'react';
 import Modal from '../components/Modal';
@@ -330,12 +330,12 @@ function LandingPage() {
                             <h3 className="text-white font-semibold text-base mb-4">Product</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <a
-                                        href="/dashboard"
+                                    <Link
+                                        to="/dashboard"
                                         className="text-slate-400 hover:text-teal-400 transition-colors text-sm"
                                     >
                                         Dashboard
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <a
@@ -358,14 +358,14 @@ function LandingPage() {
                             <h3 className="text-white font-semibold text-base mb-4">Company</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <a href="/about" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
+                                    <Link to="/about" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
                                         About Us
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="/contact" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
+                                    <Link to="/contact" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
                                         Contact
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -375,14 +375,14 @@ function LandingPage() {
                             <h3 className="text-white font-semibold text-base mb-4">Legal</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <a href="/terms-of-service" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
+                                    <Link to="/terms-of-service" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
                                         Terms of Service
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="/privacy" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
+                                    <Link to="/privacy" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
                                         Privacy Policy
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
